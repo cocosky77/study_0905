@@ -1,26 +1,72 @@
+/* 반응형을 위한 미디어 쿼리 */
+@media (max-width: 768px) {
+  nav {
+      flex-direction: column;
+  }
+
+  .col {
+      flex-basis: 100%;
+  }
+}
+
+/* body 설정 */
 body, html {
   margin: 0;
   padding: 0;
+  height: 100%;
   background-color: #000;
-  font-family: Arial, sans-serif;
-  color: white;
 }
 
-.App {
-  max-width: 1200px;
-  margin: 0 auto;
+/* nav */
+nav {
+  display: flex;
+  background-color: #333;
   padding: 20px;
+  gap:10px;
+  align-items: center;
+}
+
+.nav_left {
+  margin-right: auto;
+}
+
+.nav_left_img {
+  height: 40px;
+}
+
+
+.nav_right {
+  margin-left: auto;
+}
+
+nav a {
+  color: #fff;
+  margin: 0 20px;
+  background-color: #333;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+
+nav a:hover {
+  color: #ff00c8;
+}
+
+/* Available Games */
+.container {
+  justify-content: center;
+  margin: 0 500px;
 }
 
 .header {
   display: flex;
+  padding: 50px 0px;
   align-items: center;
-  padding: 10px 0;
 }
 
 .header h1 {
-  font-size: 24px;
   color: #fff;
+  font-size: 32px;
 }
 
 .header p {
@@ -28,7 +74,7 @@ body, html {
   margin: 0 20px;
 }
 
-.header_btn {
+.available-games_btn {
   background-color: #ff00c8;
   color: white;
   padding: 10px 20px;
@@ -38,65 +84,41 @@ body, html {
   border-radius: 5px;
 }
 
-.games {
+.available-games_posters {
   display: flex;
-  overflow-x: auto;
-  gap: 20px;
-  padding: 20px 0;
+  overflow-x: hidden;
+  gap: 10px;
+  justify-content: center;
 }
 
-.image {
-  flex: 0 0 auto;
-  width: 150px;
-  height: 225px;
-  /* transition: transform 0.3s; */
+/* .available-games_posters_detail {
+  opacity: 1;
+  transform: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-.image img {
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-}
+.available-games_posters_detail.animate {
+  opacity: 0.8;
+  transform: scale(0.8);
+} */
 
-.image:hover {
-  transform: scale(1.1);
-}
-
-.tournaments-grid {
+.upcoming-tournaments_games {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  padding: 20px 0;
 }
 
-.tournament-card {
+.upcoming-tournaments_games_card {
   background-color: #222;
-  border-radius: 10px;
-  overflow: hidden;
-  transition: transform 0.3s;
-}
-
-.tournament-card:hover {
-  transform: scale(1.05);
-}
-
-.tournament-image img {
   width: 100%;
+}
+
+.upcoming-tournaments_games_image img {
   height: auto;
-  display: block;
+  object-fit: cover;
+  width: 100%;
 }
 
-.tournament-details {
+.upcoming-tournaments_games_detail {
   padding: 15px;
-}
-
-.tournament-details h2 {
-  font-size: 18px;
-  margin: 0 0 10px;
   color: #fff;
-}
-
-.tournament-details p {
-  margin: 5px 0;
-  color: #ccc;
 }
